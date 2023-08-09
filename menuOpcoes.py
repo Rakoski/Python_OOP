@@ -8,12 +8,11 @@ def exibit_menu():
         print("-=-" * 30)
         print("MENU DE OPÇÕES")
         print("-=-" * 30)
-        print("""
-                 1. CRIAR VETOR
-                 2. PREENCHER VETOR
-                 3. EXIBIR VETOR
-                 4. EXIBIR QUANTOS VALORES X TEM NO VETOR
-                 5. SAIR""")
+        print("""1. CRIAR VETOR
+2. PREENCHER VETOR
+3. EXIBIR VETOR
+4. EXIBIR QUANTOS VALORES X TEM NO VETOR
+5. SAIR""")
         print()
         escolha = int(input("Digite sua escolha: "))
 
@@ -35,7 +34,7 @@ def exibit_menu():
         elif escolha == 3:
             if not cont:
                 raise IndexError("Vetor não criado")
-            print(lista)
+            exibir_vetor(lista)
 
         elif escolha == 4:
             if not cont:
@@ -52,13 +51,19 @@ def exibit_menu():
             print("escolha não encontrada...")
 
 
+def exibir_vetor(vetor):
+    for c in range(len(vetor)):
+        print(vetor[c], end=', ' if vetor[c] < len(vetor) else "")
+    print()
+
 
 def exibir_valores(vetor):
     cont = 0
     x = int(input("qual número você quer saber quantos tem? "))
     if x in vetor:
         cont += 1
-    print(f"Existem {cont} de {x} em {vetor}")
+    print(f"Existem {cont} de {x} em ", end='')
+    exibir_vetor(vetor)
 
 
 exibit_menu()
