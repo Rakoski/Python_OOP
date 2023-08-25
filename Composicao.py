@@ -39,3 +39,7 @@ cliente1.inserir_endereco('Av 5 de Março', 345)
 print(endereco_externo.rua, endereco_externo.numero)
 cliente1.listar_enderecos()
 print('-=-'*30, 'HERE STARTS THE GARBAGE COLLECTION', '-=-'*30)
+
+# __del__ is a finalizer. It is called when an object is garbage collected,
+# which happens at some point after all references to the object have been deleted.
+# - StackOverFlow
